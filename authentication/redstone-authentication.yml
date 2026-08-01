@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.redstone.finance/docs/introduction
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: public-read
+  type: none
+  description: >-
+    The RedStone cache/price API and oracle gateway are public and read-only; no API key, token,
+    or OAuth is required to fetch signed data packages or historical prices.
+  sources: [https://api.redstone.finance, https://oracle-gateway-1.a.redstone.finance]
+data_integrity:
+  model: signed-data-packages
+  description: >-
+    Trust is enforced cryptographically rather than by API authentication. Every data package is
+    signed with the provider's ECDSA key; responses include liteEvmSignature and providerPublicKey
+    so consumers verify authenticity on-chain (via the EVM/chain connectors) or off-chain.
+notes: >-
+  Push-model contract deployment and relayer operation use the RedStone CLI and on-chain accounts;
+  those are chain-level credentials, not an HTTP API auth scheme.

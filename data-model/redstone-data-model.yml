@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: derived
+source: https://api.redstone.finance/prices (observed response shape)
+notes: >-
+  Derived from the live cache/price API response and the RedStone data-package model. No published
+  OpenAPI was found, so this graph is inferred from observed JSON and the documented Pull/Push models.
+entities:
+- name: DataPackage
+  description: A signed bundle of one or more data points for a data-service at a timestamp.
+  fields:
+  - {name: timestamp, type: number, description: Unix millisecond timestamp of the package.}
+  - {name: liteEvmSignature, type: string, description: ECDSA signature over the package.}
+  - {name: providerPublicKey, type: string, description: Base64 public key used to verify the signature.}
+  - {name: dataServiceId, type: string, description: e.g. redstone-primary-prod.}
+  relationships:
+  - {type: has_many, target: PricePoint, via: dataPoints}
+- name: PricePoint
+  description: A single token price observation aggregated across exchanges.
+  fields:
+  - {name: symbol, type: string, description: Token ticker (e.g. ETH).}
+  - {name: value, type: number, description: Aggregated price value.}
+  - {name: provider, type: string, description: Data provider identifier.}
+  - {name: timestamp, type: number, description: Unix millisecond timestamp.}
+  - {name: source, type: object, description: Per-exchange source prices (Binance, Kraken, OKX, ...).}
+  relationships:
+  - {type: belongs_to, target: DataPackage, via: dataServiceId}
+- name: DataFeed
+  description: An on-chain price-feed contract (Push model) that a DataPackage is relayed into.
+  fields:
+  - {name: feedId, type: string, description: Feed / data-feed identifier.}
+  relationships:
+  - {type: has_many, target: PricePoint, via: symbol}
+id_conventions:
+  data_service_ids: [redstone-primary-prod, redstone-primary-demo]

@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://docs.redstone.finance/docs/introduction
+notes: >-
+  No official hosted/remote RedStone MCP server was found. This is a CANDIDATE tool surface derived
+  from the public cache/price API and oracle gateway endpoints, offered as a starting point for an
+  MCP wrapper. RedStone does publish an @redstone-finance/agents npm package, but it was not verified
+  to be an MCP server.
+server:
+  name: redstone
+  transport: http
+  url: null
+tools:
+- name: get_price
+  description: Fetch the latest aggregated price for a token symbol.
+  source_operation: "GET https://api.redstone.finance/prices?symbol={symbol}&provider={provider}"
+- name: get_prices
+  description: Fetch latest prices for multiple token symbols in one request.
+  source_operation: "GET https://api.redstone.finance/prices?symbols={csv}&provider={provider}"
+- name: get_price_history
+  description: Fetch recent historical price points for a token symbol.
+  source_operation: "GET https://api.redstone.finance/prices?symbol={symbol}&limit={limit}"
+- name: get_latest_data_package
+  description: Fetch the latest signed data packages for a data-service.
+  source_operation: "GET https://oracle-gateway-1.a.redstone.finance/data-packages/latest/{data-service-id}"

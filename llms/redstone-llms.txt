@@ -1,0 +1,31 @@
+# RedStone
+
+> RedStone is a modular blockchain oracle infrastructure provider delivering tamper-proof, signed price feeds and off-chain data to smart contracts across 100+ EVM and non-EVM networks. Data is aggregated from 20+ exchanges, signed per data-package, and delivered via Pull (Core), Push (on-chain relayers), and Hybrid (ERC-7412) models. A public read-only HTTP cache/gateway API serves signed data packages and historical prices; no authentication is required and integrity is verified cryptographically.
+
+## APIs
+- [RedStone Cache / Price API](https://docs.redstone.finance/docs/introduction): Public read-only prices endpoint — base https://api.redstone.finance (GET /prices?symbol=ETH&provider=redstone).
+- [RedStone Oracle Gateway](https://docs.redstone.finance/docs/category/getting-started/): Latest signed data packages — base https://oracle-gateway-1.a.redstone.finance (GET /data-packages/latest/{data-service-id}).
+
+## Docs
+- [Introduction](https://docs.redstone.finance/docs/introduction)
+- [Getting Started](https://docs.redstone.finance/docs/category/getting-started/)
+- [Documentation Home](https://docs.redstone.finance)
+
+## SDKs & CLI
+- [@redstone-finance/sdk (npm)](https://www.npmjs.com/package/@redstone-finance/sdk)
+- [@redstone-finance/evm-connector (npm)](https://www.npmjs.com/package/@redstone-finance/evm-connector)
+- [@redstone-finance/protocol (npm)](https://www.npmjs.com/package/@redstone-finance/protocol)
+- [@redstone-finance/cli (npm)](https://www.npmjs.com/package/@redstone-finance/cli)
+- [redstone-api (legacy JS price library)](https://www.npmjs.com/package/redstone-api)
+- [Rust SDK](https://github.com/redstone-finance/rust-sdk)
+
+## Repos
+- [GitHub Organization](https://github.com/redstone-finance)
+- [Oracles monorepo](https://github.com/redstone-finance/redstone-oracles-monorepo)
+- [EVM examples](https://github.com/redstone-finance/redstone-evm-examples)
+
+## Community & Security
+- [Blog](https://blog.redstone.finance)
+- [Discord](https://discord.com/invite/redstone)
+- [Bug Bounty (Cantina)](https://cantina.xyz/bounties/36c588d4-0681-45a8-9694-13a871cc4ae6)
+- [Privacy Policy](https://www.redstone.finance/documents/RedStone---Privacy-Policy.pdf)

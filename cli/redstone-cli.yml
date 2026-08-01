@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.npmjs.com/package/@redstone-finance/cli
+clis:
+- name: RedStone CLI
+  package: "@redstone-finance/cli"
+  registry: npm
+  install:
+  - npm install -g @redstone-finance/cli
+  url: https://www.npmjs.com/package/@redstone-finance/cli
+  docs: https://docs.redstone.finance/docs/dapps/redstone-push/
+  description: >-
+    Deploys the contracts needed for the RedStone Push model and runs the relayer responsible for
+    pushing prices on-chain.
+  surface:
+  - group: deploy
+    description: Deploy the price-feed and adapter contracts for the Push model.
+  - group: relayer
+    description: Run the on-chain relayer that writes signed prices to the feed contract.
+- name: RedStone Terminal CLI
+  repo: https://github.com/redstone-finance/terminal-cli
+  language: go
+  description: Go-based terminal CLI for interacting with RedStone tooling.

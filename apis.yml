@@ -1,8 +1,15 @@
 aid: redstone
-name: Redstone
-description: 'Redstone is a company surfaced as a portfolio company of matrix-partners and added to the
-  API Evangelist network as a stub for enrichment. Sector: infrastructure. This profile is a lead awaiting
-  the enrichment pipeline.'
+name: RedStone
+description: >-
+  RedStone is a modular blockchain oracle infrastructure provider delivering tamper-proof price
+  feeds and off-chain data to smart contracts across 100+ EVM and non-EVM networks. It aggregates
+  data from 20+ centralized and decentralized exchanges, signs each data package with the provider's
+  key, and delivers it through three models: Pull (Core, on-demand data injected into a transaction
+  via the EVM connector), Push (on-chain relayers that write prices to a feed contract), and a Hybrid
+  ERC-7412 flow. RedStone also runs a public HTTP cache/gateway API for reading signed data packages
+  and historical prices, publishes SDKs (TypeScript, Rust), chain connectors (EVM, Starknet, TON,
+  Fuel, Radix, Casper), a CLI, and on-chain example contracts. It secures billions of dollars of
+  value for 200+ DeFi protocols and supports Proof of Reserve and MEV-resistant (OEV) products.
 url: https://raw.githubusercontent.com/api-evangelist/redstone/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,15 +17,106 @@ x-backed-by:
 - matrix-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://cdn.prod.website-files.com/67519197ce9eaef4601a6287/677f9f8bb6ae73e45b28a6fb_Variant2%20(3).png
 tags:
 - Company
 - Infrastructure
-apis: []
+- Blockchain
+- Oracle
+- DeFi
+- Price Feeds
+- Data
+- Web3
+- Smart Contracts
+apis:
+- name: RedStone Cache / Price API
+  description: >-
+    Public HTTP gateway that serves signed data packages and historical token prices aggregated by
+    the RedStone oracle network. Read-only and unauthenticated; responses carry ECDSA signatures and
+    the provider public key for on-chain and off-chain verification.
+  humanURL: https://docs.redstone.finance/docs/introduction
+  baseURL: https://api.redstone.finance
+  tags:
+  - Oracle
+  - Price Feeds
+  - Data
+  properties:
+  - type: Documentation
+    url: https://docs.redstone.finance
+- name: RedStone Oracle Gateway
+  description: >-
+    Production data-package gateway exposing the latest signed data packages per data-service
+    (e.g. redstone-primary-prod) for the Pull model and SDK consumption.
+  humanURL: https://docs.redstone.finance/docs/category/getting-started/
+  baseURL: https://oracle-gateway-1.a.redstone.finance
+  tags:
+  - Oracle
+  - Data Packages
+  - Gateway
+  properties:
+  - type: Documentation
+    url: https://docs.redstone.finance
+common:
+- type: Website
+  url: https://www.redstone.finance
+- type: DeveloperPortal
+  url: https://app.redstone.finance
+- type: Documentation
+  url: https://docs.redstone.finance
+- type: GettingStarted
+  url: https://docs.redstone.finance/docs/category/getting-started/
+- type: Blog
+  url: https://blog.redstone.finance
+- type: GitHubOrganization
+  url: https://github.com/redstone-finance
+- type: Support
+  url: https://discord.com/invite/redstone
+- type: PrivacyPolicy
+  url: https://www.redstone.finance/documents/RedStone---Privacy-Policy.pdf
+- type: Packages
+  url: packages/redstone-packages.yml
+- type: SDKs
+  url: packages/redstone-packages.yml
+- type: CLI
+  url: cli/redstone-cli.yml
+- type: Authentication
+  url: authentication/redstone-authentication.yml
+- type: Conventions
+  url: conventions/redstone-conventions.yml
+- type: DataModel
+  url: data-model/redstone-data-model.yml
+- type: DomainSecurity
+  url: security/redstone-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/redstone-vulnerability-disclosure.yml
+- type: Security
+  url: security/redstone-vulnerability-disclosure.yml
+- type: MCPServer
+  url: mcp/redstone-mcp.yml
+- type: LLMsTxt
+  url: llms/redstone-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

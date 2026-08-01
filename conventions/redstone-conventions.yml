@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.redstone.finance/docs/introduction
+authentication:
+  style: none-public-read
+  ref: authentication/redstone-authentication.yml
+transport:
+  protocol: https
+  format: application/json
+request_shape:
+  style: query-parameters
+  cache_price_api:
+    base_url: https://api.redstone.finance
+    endpoint: /prices
+    params:
+    - name: symbol
+      description: Single token ticker to fetch (e.g. ETH).
+    - name: symbols
+      description: Comma-separated list of tickers for a batch request.
+    - name: provider
+      description: Data provider id (e.g. redstone, redstone-primary-prod).
+    - name: limit
+      description: Number of historical points to return.
+  oracle_gateway:
+    base_url: https://oracle-gateway-1.a.redstone.finance
+    endpoint: /data-packages/latest/{data-service-id}
+    description: Returns the latest signed data packages for a data-service (e.g. redstone-primary-prod).
+response_shape:
+  envelope: array-of-price-objects
+  key_fields:
+  - symbol
+  - value
+  - provider
+  - timestamp
+  - source
+  - liteEvmSignature
+  - providerPublicKey
+integrity:
+  signing: ECDSA per data package
+  verification_fields: [liteEvmSignature, providerPublicKey]
+  description: Consumers verify signatures on-chain via chain connectors or off-chain with the SDK.
+idempotency:
+  supported: false
+  reason: Public read-only GET API; no state-mutating write operations to make idempotent.
+pagination:
+  style: limit-param
+  params: [limit]
+versioning:
+  scheme: data-service-id
+  description: >-
+    Environments/versions are addressed via data-service ids (e.g. redstone-primary-prod,
+    redstone-primary-demo) rather than URL/header API versioning.
+cross_links:
+  authentication: authentication/redstone-authentication.yml
+  data_model: data-model/redstone-data-model.yml
