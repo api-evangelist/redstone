@@ -78,6 +78,10 @@ apis:
   tags:
   - Oracle
   - Data Packages
+  - Gateways
+  tags_raw:
+  - Oracle
+  - Data Packages
   - Gateway
   properties:
   - type: Documentation
