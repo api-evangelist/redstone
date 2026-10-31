@@ -1,4 +1,4 @@
-# Redstone
+# RedStone
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,6 +64,98 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Redstone is a company surfaced as a portfolio company of matrix-partners and added to the API Evangelist network as a stub for enrichment. Sector: infrastructure. This profile is a lead awaiting the enrichment pipeline.
+RedStone is a modular blockchain oracle infrastructure provider delivering tamper-proof price feeds and off-chain data to smart contracts across 100+ EVM and non-EVM networks. It aggregates data from 20+ centralized and decentralized exchanges, signs each data package with the provider's key, and delivers it through three models: Pull (Core, on-demand data injected into a transaction via the EVM connector), Push (on-chain relayers that write prices to a feed contract), and a Hybrid ERC-7412 flow. RedStone also runs a public HTTP cache/gateway API for reading signed data packages and historical prices, publishes SDKs (TypeScript, Rust), chain connectors (EVM, Starknet, TON, Fuel, Radix, Casper), a CLI, and on-chain example contracts. It secures billions of dollars of value for 200+ DeFi protocols and supports Proof of Reserve and MEV-resistant (OEV) products.
 
-Backed by: matrix-partners
+**Areas:** Company · Infrastructure · Blockchain · Oracle · DeFi · Price Feeds · Data · Web3 · Smart Contracts
+
+## RedStone on APIs.io
+
+Everything profiled for RedStone is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/redstone/](https://apis.io/providers/redstone/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [RedStone Cache / Price API](https://apis.io/apis/redstone/redstone-cache-price-api/) — Public HTTP gateway that serves signed data packages and historical token prices aggregated by the RedStone oracle network. Read-only and unauthenticated;…
+- [RedStone Oracle Gateway](https://apis.io/apis/redstone/redstone-oracle-gateway/) — Production data-package gateway exposing the latest signed data packages per data-service (e.g. redstone-primary-prod) for the Pull model and SDK consumption.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [redstone](https://apis.io/servers/redstone/redstone/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Redstone Authentication](https://apis.io/security/redstone/redstone-authentication/)
+- [Redstone Domain Security](https://apis.io/security/redstone/redstone-domain-security/)
+- [Redstone Vulnerability Disclosure](https://apis.io/security/redstone/redstone-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.redstone.finance)
+- [Documentation](https://docs.redstone.finance)
+- [Getting started](https://docs.redstone.finance/docs/category/getting-started/)
+- [Support](https://discord.com/invite/redstone)
+- [Blog](https://www.redstone.finance/blog)
+- [Privacy policy](https://www.redstone.finance/documents/RedStone---Privacy-Policy.pdf)
+- [GitHub](https://github.com/redstone-finance)
+
+## API Evangelist rating
+
+**Kin Score 25.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 64.3 |
+| Access clarity | 10.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/redstone/](https://apis.io/providers/redstone/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for RedStone: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/redstone/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
